@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/freertos.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/freertos.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/main.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/main.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/syscalls.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/syscalls.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/sysmem.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/sysmem.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/system_stm32f4xx.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/system_stm32f4xx.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Startup/startup_stm32f411retx.s.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj.d"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
+  "CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj.d"
+  "STM32f411ret6_usart_blinking.elf"
+  "STM32f411ret6_usart_blinking.elf.manifest"
+  "STM32f411ret6_usart_blinking.elf.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang ASM C)
+  include(CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

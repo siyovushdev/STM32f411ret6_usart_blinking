@@ -1,0 +1,29 @@
+CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/freertos.c.obj: \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Core\Src\freertos.c \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/stdint.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/_default_types.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/features.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/_newlib_version.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_intsup.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_stdint.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Core\Inc/FreeRTOSConfig.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/reent.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/reent.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/_ansi.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/newlib.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/config.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/ieeefp.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/cdefs.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/_types.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/machine/_types.h \
+ C:\ST\STM32CubeCLT_1.18.0\GNU-tools-for-STM32\bin\../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/sys/lock.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
+ C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\Middlewares\Third_Party\FreeRTOS\Source\include/list.h
