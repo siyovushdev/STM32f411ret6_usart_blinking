@@ -1,157 +1,377 @@
-// Target: STM32F411RE (Nucleo-F411RE)
-// Toolchain: CMSIS v1.28.1, CMSIS-RTOS2
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "cmsis_os.h"
 
-#include "stm32f411xe.h"
-#include "cmsis_os2.h"
-#include <string.h>
-#include <stdbool.h>
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
 
-#define UART_RX_QUEUE_LEN 64
-#define UART_TX_BUFFER_LEN 128
+/* USER CODE END Includes */
 
-// RTOS objects
-osThreadId_t UartTaskHandle;
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+
+/* Definitions for BlinkingTask */
 osThreadId_t BlinkingTaskHandle;
-osMessageQueueId_t UartRxQueue;
-osMessageQueueId_t BlinkingQueue;
-osEventFlagsId_t UartTxEventFlags;
-#define TX_DONE_FLAG (1 << 0)
+const osThreadAttr_t BlinkingTask_attributes = {
+        .name = "BlinkingTask",
+        .stack_size = 128 * 4,
+        .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for Usart2Task */
+osThreadId_t Usart2TaskHandle;
+const osThreadAttr_t Usart2Task_attributes = {
+        .name = "Usart2Task",
+        .stack_size = 128 * 4,
+        .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for blinkingQueue */
+osMessageQueueId_t blinkingQueueHandle;
+const osMessageQueueAttr_t blinkingQueue_attributes = {
+        .name = "blinkingQueue"
+};
+/* Definitions for usartRxQueue */
+osMessageQueueId_t usartRxQueueHandle;
+const osMessageQueueAttr_t usartRxQueue_attributes = {
+        .name = "usartRxQueue"
+};
+/* USER CODE BEGIN PV */
 
-char txBuffer[UART_TX_BUFFER_LEN];
-volatile uint16_t txIndex = 0;
-volatile uint16_t txLength = 0;
+/* USER CODE END PV */
 
+/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void GPIO_Init(void);
-void USART2_Init(void);
-void UartTask(void *argument);
-void BlinkingTask(void *argument);
-void USART2_SendStringAsync(const char *str);
 
+static void MX_GPIO_Init(void);
+
+static void MX_USART2_UART_Init(void);
+
+void StartBlinkingTask(void *argument);
+
+void StartUsart2Task(void *argument);
+
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void) {
-    SystemClock_Config();
-    GPIO_Init();
-    USART2_Init();
 
+    /* USER CODE BEGIN 1 */
+
+    /* USER CODE END 1 */
+
+    /* MCU Configuration--------------------------------------------------------*/
+
+    /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+    HAL_Init();
+
+    /* USER CODE BEGIN Init */
+
+    /* USER CODE END Init */
+
+    /* Configure the system clock */
+    SystemClock_Config();
+
+    /* USER CODE BEGIN SysInit */
+
+    /* USER CODE END SysInit */
+
+    /* Initialize all configured peripherals */
+    MX_GPIO_Init();
+    MX_USART2_UART_Init();
+    /* USER CODE BEGIN 2 */
+
+    /* USER CODE END 2 */
+
+    /* Init scheduler */
     osKernelInitialize();
 
-    UartRxQueue = osMessageQueueNew(UART_RX_QUEUE_LEN, sizeof(uint8_t), NULL);
-    BlinkingQueue = osMessageQueueNew(16, sizeof(uint8_t), NULL);
-    UartTxEventFlags = osEventFlagsNew(NULL);
-    UartTaskHandle = osThreadNew(UartTask, NULL, NULL);
-    BlinkingTaskHandle = osThreadNew(BlinkingTask, NULL, NULL);
+    /* USER CODE BEGIN RTOS_MUTEX */
+    /* add mutexes, ... */
+    /* USER CODE END RTOS_MUTEX */
 
+    /* USER CODE BEGIN RTOS_SEMAPHORES */
+    /* add semaphores, ... */
+    /* USER CODE END RTOS_SEMAPHORES */
+
+    /* USER CODE BEGIN RTOS_TIMERS */
+    /* start timers, add new ones, ... */
+    /* USER CODE END RTOS_TIMERS */
+
+    /* Create the queue(s) */
+    /* creation of blinkingQueue */
+    blinkingQueueHandle = osMessageQueueNew(16, sizeof(uint16_t), &blinkingQueue_attributes);
+
+    /* creation of usartRxQueue */
+    usartRxQueueHandle = osMessageQueueNew(64, sizeof(uint16_t), &usartRxQueue_attributes);
+
+    /* USER CODE BEGIN RTOS_QUEUES */
+    /* add queues, ... */
+    /* USER CODE END RTOS_QUEUES */
+
+    /* Create the thread(s) */
+    /* creation of BlinkingTask */
+    BlinkingTaskHandle = osThreadNew(StartBlinkingTask, NULL, &BlinkingTask_attributes);
+
+    /* creation of Usart2Task */
+    Usart2TaskHandle = osThreadNew(StartUsart2Task, NULL, &Usart2Task_attributes);
+
+    /* USER CODE BEGIN RTOS_THREADS */
+    /* add threads, ... */
+    /* USER CODE END RTOS_THREADS */
+
+    /* USER CODE BEGIN RTOS_EVENTS */
+    /* add events, ... */
+    /* USER CODE END RTOS_EVENTS */
+
+    /* Start scheduler */
     osKernelStart();
-    while (1) {}
-}
 
-void GPIO_Init(void) {
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN;
+    /* We should never get here as control is now taken by the scheduler */
 
-    // PA2 (USART2_TX), PA3 (USART2_RX)
-    GPIOA->MODER &= ~((3U << GPIO_MODER_MODER2_Pos) | (3U << GPIO_MODER_MODER3_Pos));
-    GPIOA->MODER |=  (2U << GPIO_MODER_MODER2_Pos) | (2U << GPIO_MODER_MODER3_Pos); // Alternate function
-    GPIOA->AFR[0] &= ~((0xF << GPIO_AFRL_AFSEL2_Pos) | (0xF << GPIO_AFRL_AFSEL3_Pos));
-    GPIOA->AFR[0] |=  (7U << GPIO_AFRL_AFSEL2_Pos) | (7U << GPIO_AFRL_AFSEL3_Pos);  // AF7 (USART2)
-
-    // PC13 — LED
-    GPIOA->MODER &= ~(3U << GPIO_MODER_MODER5_Pos);
-    GPIOA->MODER |=  (1U << GPIO_MODER_MODER5_Pos); // Output
-    GPIOA->ODR |= GPIO_ODR_OD5; // LED OFF (active low)
-}
-
-void USART2_Init(void) {
-    RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
-
-    USART2->BRR = SystemCoreClock / 115200;
-    USART2->CR1 |= USART_CR1_TE | USART_CR1_RE;
-    USART2->CR1 |= USART_CR1_RXNEIE;
-    USART2->CR1 |= USART_CR1_UE;
-
-    NVIC_SetPriority(USART2_IRQn, 6);
-    NVIC_EnableIRQ(USART2_IRQn);
-}
-
-void BlinkingTask(void *argument) {
-    uint8_t cmd = 0;
-    for (;;) {
-        GPIOA->ODR ^= GPIO_ODR_OD5;
-        osDelay(1000);
-        // if (osMessageQueueGet(BlinkingQueue, &cmd, NULL, osWaitForever) == osOK) {
-        //     if (cmd == 0xFF) {
-        //         while (1) {
-        //             GPIOA->ODR ^= GPIO_ODR_OD5;
-        //             osDelay(100);
-        //             if (osMessageQueueGet(BlinkingQueue, &cmd, NULL, 0) == osOK && cmd == 0xFE)
-        //                 break;
-        //         }
-        //         GPIOA->ODR |= GPIO_ODR_OD5; // LED OFF
-        //     }
-        // }
-    }
-}
-
-void UartTask(void *argument) {
-    uint8_t cmd;
+    /* Infinite loop */
+    /* USER CODE BEGIN WHILE */
     while (1) {
-        if (osMessageQueueGet(UartRxQueue, &cmd, NULL, osWaitForever) == osOK) {
-            osMessageQueuePut(BlinkingQueue, (uint8_t[]){0xFF}, 0, 0);
+        /* USER CODE END WHILE */
 
-            const char *msg = NULL;
-            if (cmd == '1') msg = "Hello, STM32F411!\r\n";
-            else if (cmd == '0') msg = "Goodbye from STM32F411!\r\n";
-            else msg = "Unknown command!\r\n";
-
-            USART2_SendStringAsync(msg);
-            osEventFlagsWait(UartTxEventFlags, TX_DONE_FLAG, osFlagsWaitAny, osWaitForever);
-            osMessageQueuePut(BlinkingQueue, (uint8_t[]){0xFE}, 0, 0);
-        }
+        /* USER CODE BEGIN 3 */
     }
+    /* USER CODE END 3 */
 }
 
-void USART2_SendStringAsync(const char *str) {
-    while (txLength);
-    txLength = strlen(str);
-    memcpy((char*)txBuffer, str, txLength);
-    txIndex = 0;
-    USART2->CR1 |= USART_CR1_TXEIE;
-}
-
-void USART2_IRQHandler(void) {
-    if ((USART2->SR & USART_SR_RXNE) && (USART2->CR1 & USART_CR1_RXNEIE)) {
-        uint8_t byte = USART2->DR;
-        osMessageQueuePut(UartRxQueue, &byte, 0, 0);
-    }
-    if ((USART2->SR & USART_SR_TXE) && (USART2->CR1 & USART_CR1_TXEIE)) {
-        if (txIndex < txLength) {
-            USART2->DR = txBuffer[txIndex++];
-        } else {
-            USART2->CR1 &= ~USART_CR1_TXEIE;
-            USART2->CR1 |= USART_CR1_TCIE;
-        }
-    }
-    if ((USART2->SR & USART_SR_TC) && (USART2->CR1 & USART_CR1_TCIE)) {
-        USART2->CR1 &= ~USART_CR1_TCIE;
-        txLength = 0;
-        osEventFlagsSet(UartTxEventFlags, TX_DONE_FLAG);
-    }
-}
-
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
 void SystemClock_Config(void) {
-    RCC->CR |= RCC_CR_HSEON;
-    while (!(RCC->CR & RCC_CR_HSERDY));
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-    RCC->PLLCFGR = (RCC_PLLCFGR_PLLSRC_HSE | (8 << RCC_PLLCFGR_PLLM_Pos) |
-                   (336 << RCC_PLLCFGR_PLLN_Pos) | (0 << RCC_PLLCFGR_PLLP_Pos) |
-                   (7 << RCC_PLLCFGR_PLLQ_Pos));
+    /** Configure the main internal regulator output voltage
+    */
+    __HAL_RCC_PWR_CLK_ENABLE();
+    __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
-    RCC->CR |= RCC_CR_PLLON;
-    while (!(RCC->CR & RCC_CR_PLLRDY));
+    /** Initializes the RCC Oscillators according to the specified parameters
+    * in the RCC_OscInitTypeDef structure.
+    */
+    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+    RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+    RCC_OscInitStruct.PLL.PLLM = 12;
+    RCC_OscInitStruct.PLL.PLLN = 96;
+    RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+    RCC_OscInitStruct.PLL.PLLQ = 4;
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+        Error_Handler();
+    }
 
-    FLASH->ACR |= FLASH_ACR_LATENCY_5WS;
-    RCC->CFGR |= RCC_CFGR_HPRE_DIV1 | RCC_CFGR_PPRE1_DIV4 | RCC_CFGR_PPRE2_DIV2;
-    RCC->CFGR |= RCC_CFGR_SW_PLL;
-    while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
+    /** Initializes the CPU, AHB and APB buses clocks
+    */
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                  | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-    SystemCoreClockUpdate();
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK) {
+        Error_Handler();
+    }
+
+    /** Enables the Clock Security System
+    */
+    HAL_RCC_EnableCSS();
 }
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void) {
+
+    /* USER CODE BEGIN USART2_Init 0 */
+
+    /* USER CODE END USART2_Init 0 */
+
+    /* USER CODE BEGIN USART2_Init 1 */
+
+    /* USER CODE END USART2_Init 1 */
+    huart2.Instance = USART2;
+    huart2.Init.BaudRate = 115200;
+    huart2.Init.WordLength = UART_WORDLENGTH_8B;
+    huart2.Init.StopBits = UART_STOPBITS_1;
+    huart2.Init.Parity = UART_PARITY_NONE;
+    huart2.Init.Mode = UART_MODE_TX_RX;
+    huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+    if (HAL_UART_Init(&huart2) != HAL_OK) {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN USART2_Init 2 */
+    __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
+    __HAL_UART_ENABLE_IT(&huart2, UART_IT_TC);
+// TXE включай, когда нужно отправить (см. предыдущий код)
+    /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void) {
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    /* USER CODE BEGIN MX_GPIO_Init_1 */
+
+    /* USER CODE END MX_GPIO_Init_1 */
+
+    /* GPIO Ports Clock Enable */
+    __HAL_RCC_GPIOH_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
+    /*Configure GPIO pin : PA5 */
+    GPIO_InitStruct.Pin = GPIO_PIN_5;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    /* USER CODE BEGIN MX_GPIO_Init_2 */
+
+    /* USER CODE END MX_GPIO_Init_2 */
+}
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartBlinkingTask */
+/**
+  * @brief  Function implementing the BlinkingTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartBlinkingTask */
+void StartBlinkingTask(void *argument) {
+    /* USER CODE BEGIN 5 */
+    /* Infinite loop */
+    for (;;) {
+        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+        osDelay(1000);
+    }
+    /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartUsart2Task */
+/**
+* @brief Function implementing the Usart2Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartUsart2Task */
+void StartUsart2Task(void *argument) {
+    /* USER CODE BEGIN StartUsart2Task */
+    /* Infinite loop */
+    for (;;) {
+        osDelay(1);
+    }
+    /* USER CODE END StartUsart2Task */
+}
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM1 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+    /* USER CODE BEGIN Callback 0 */
+
+    /* USER CODE END Callback 0 */
+    if (htim->Instance == TIM1) {
+        HAL_IncTick();
+    }
+    /* USER CODE BEGIN Callback 1 */
+
+    /* USER CODE END Callback 1 */
+}
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void) {
+    /* USER CODE BEGIN Error_Handler_Debug */
+    /* User can add his own implementation to report the HAL error return state */
+    __disable_irq();
+    while (1) {
+    }
+    /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

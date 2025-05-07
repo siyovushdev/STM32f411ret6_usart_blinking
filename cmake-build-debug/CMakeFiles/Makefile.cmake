@@ -26,7 +26,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "C:/Program Files/JetBrains/CLion2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "C:/Program Files/JetBrains/CLion2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Generic.cmake"
-  "C:/Users/user/Documents/ClionSTM32Projects/STM32f411ret6_usart_blinking/CMakeLists.txt"
+  "C:/Users/user/CLionProjects/STM32f411ret6_usart_blinking/CMakeLists.txt"
   "CMakeFiles/3.31.6/CMakeASMCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeCXXCompiler.cmake"

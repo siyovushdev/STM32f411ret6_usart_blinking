@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion2025.1\bin\cmake\win\x64\bin\cmake.exe" -E
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking
+CMAKE_SOURCE_DIR = C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,16 +86,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\Documents\ClionSTM32Projects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\user\CLionProjects\STM32f411ret6_usart_blinking\cmake-build-debug\CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -183,6 +183,78 @@ Core/Src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/main.c.s
 .PHONY : Core/Src/main.c.s
 
+Core/Src/stm32f4xx_hal_msp.obj: Core/Src/stm32f4xx_hal_msp.c.obj
+.PHONY : Core/Src/stm32f4xx_hal_msp.obj
+
+# target to build an object file
+Core/Src/stm32f4xx_hal_msp.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+.PHONY : Core/Src/stm32f4xx_hal_msp.c.obj
+
+Core/Src/stm32f4xx_hal_msp.i: Core/Src/stm32f4xx_hal_msp.c.i
+.PHONY : Core/Src/stm32f4xx_hal_msp.i
+
+# target to preprocess a source file
+Core/Src/stm32f4xx_hal_msp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_hal_msp.c.i
+.PHONY : Core/Src/stm32f4xx_hal_msp.c.i
+
+Core/Src/stm32f4xx_hal_msp.s: Core/Src/stm32f4xx_hal_msp.c.s
+.PHONY : Core/Src/stm32f4xx_hal_msp.s
+
+# target to generate assembly for a file
+Core/Src/stm32f4xx_hal_msp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_hal_msp.c.s
+.PHONY : Core/Src/stm32f4xx_hal_msp.c.s
+
+Core/Src/stm32f4xx_hal_timebase_tim.obj: Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+.PHONY : Core/Src/stm32f4xx_hal_timebase_tim.obj
+
+# target to build an object file
+Core/Src/stm32f4xx_hal_timebase_tim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+.PHONY : Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+
+Core/Src/stm32f4xx_hal_timebase_tim.i: Core/Src/stm32f4xx_hal_timebase_tim.c.i
+.PHONY : Core/Src/stm32f4xx_hal_timebase_tim.i
+
+# target to preprocess a source file
+Core/Src/stm32f4xx_hal_timebase_tim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.i
+.PHONY : Core/Src/stm32f4xx_hal_timebase_tim.c.i
+
+Core/Src/stm32f4xx_hal_timebase_tim.s: Core/Src/stm32f4xx_hal_timebase_tim.c.s
+.PHONY : Core/Src/stm32f4xx_hal_timebase_tim.s
+
+# target to generate assembly for a file
+Core/Src/stm32f4xx_hal_timebase_tim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.s
+.PHONY : Core/Src/stm32f4xx_hal_timebase_tim.c.s
+
+Core/Src/stm32f4xx_it.obj: Core/Src/stm32f4xx_it.c.obj
+.PHONY : Core/Src/stm32f4xx_it.obj
+
+# target to build an object file
+Core/Src/stm32f4xx_it.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_it.c.obj
+.PHONY : Core/Src/stm32f4xx_it.c.obj
+
+Core/Src/stm32f4xx_it.i: Core/Src/stm32f4xx_it.c.i
+.PHONY : Core/Src/stm32f4xx_it.i
+
+# target to preprocess a source file
+Core/Src/stm32f4xx_it.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_it.c.i
+.PHONY : Core/Src/stm32f4xx_it.c.i
+
+Core/Src/stm32f4xx_it.s: Core/Src/stm32f4xx_it.c.s
+.PHONY : Core/Src/stm32f4xx_it.s
+
+# target to generate assembly for a file
+Core/Src/stm32f4xx_it.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Src/stm32f4xx_it.c.s
+.PHONY : Core/Src/stm32f4xx_it.c.s
+
 Core/Src/syscalls.obj: Core/Src/syscalls.c.obj
 .PHONY : Core/Src/syscalls.obj
 
@@ -262,6 +334,390 @@ Core/Startup/startup_stm32f411retx.obj: Core/Startup/startup_stm32f411retx.s.obj
 Core/Startup/startup_stm32f411retx.s.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Core/Startup/startup_stm32f411retx.s.obj
 .PHONY : Core/Startup/startup_stm32f411retx.s.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\STM32f411ret6_usart_blinking.elf.dir\build.make CMakeFiles/STM32f411ret6_usart_blinking.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s
 
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj: Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
 .PHONY : Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj
@@ -519,6 +975,15 @@ help:
 	@echo ... Core/Src/main.obj
 	@echo ... Core/Src/main.i
 	@echo ... Core/Src/main.s
+	@echo ... Core/Src/stm32f4xx_hal_msp.obj
+	@echo ... Core/Src/stm32f4xx_hal_msp.i
+	@echo ... Core/Src/stm32f4xx_hal_msp.s
+	@echo ... Core/Src/stm32f4xx_hal_timebase_tim.obj
+	@echo ... Core/Src/stm32f4xx_hal_timebase_tim.i
+	@echo ... Core/Src/stm32f4xx_hal_timebase_tim.s
+	@echo ... Core/Src/stm32f4xx_it.obj
+	@echo ... Core/Src/stm32f4xx_it.i
+	@echo ... Core/Src/stm32f4xx_it.s
 	@echo ... Core/Src/syscalls.obj
 	@echo ... Core/Src/syscalls.i
 	@echo ... Core/Src/syscalls.s
@@ -529,6 +994,54 @@ help:
 	@echo ... Core/Src/system_stm32f4xx.i
 	@echo ... Core/Src/system_stm32f4xx.s
 	@echo ... Core/Startup/startup_stm32f411retx.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.s
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.obj
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.i
 	@echo ... Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.s

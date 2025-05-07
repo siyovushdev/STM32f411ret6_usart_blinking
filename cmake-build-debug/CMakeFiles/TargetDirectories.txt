@@ -1,3 +1,3 @@
-C:/Users/user/Documents/ClionSTM32Projects/STM32f411ret6_usart_blinking/cmake-build-debug/CMakeFiles/STM32f411ret6_usart_blinking.elf.dir
-C:/Users/user/Documents/ClionSTM32Projects/STM32f411ret6_usart_blinking/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/user/Documents/ClionSTM32Projects/STM32f411ret6_usart_blinking/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/user/CLionProjects/STM32f411ret6_usart_blinking/cmake-build-debug/CMakeFiles/STM32f411ret6_usart_blinking.elf.dir
+C:/Users/user/CLionProjects/STM32f411ret6_usart_blinking/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/user/CLionProjects/STM32f411ret6_usart_blinking/cmake-build-debug/CMakeFiles/rebuild_cache.dir
